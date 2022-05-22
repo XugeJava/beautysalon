@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://122.112.159.169:3306/meiron?characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+    #redis配置
+    hikari:
+        connection-timeout: 10000
+        validation-timeout: 3000
+        idle-timeout: 60000
+        login-timeout: 5
+        max-lifetime: 60000
+        maximum-pool-size: 10
+        minimum-idle: 5
+        read-only: false
+
+
+  redis:
+      host: 122.112.159.169
+      port: 6379
+      database: 0
+      password: 609483
+      timeout: 1800000
+      lettuce:
+        pool:
+          max-active: 20
+          max-wait:  -1
+          max-idle:  5
+          min-idle: 0
+  cache:
+      redis:
+         time-to-live: 1800000 #开启有效时间
+server:
+  port: 8080
